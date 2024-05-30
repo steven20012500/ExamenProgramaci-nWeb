@@ -1,0 +1,372 @@
+@charset "ISO-8859-1";
+/* Estilo para los encabezados */
+h1, h2, h3 {
+    color: #333; /* Color del texto */
+    font-weight: bold; /* Negrita */
+}
+
+h1 {
+    font-size: 32px; /* Tamaño del h1 */
+}
+
+h2 {
+    font-size: 24px; /* Tamaño del h2 */
+}
+
+h3 {
+    font-size: 20px; /* Tamaño del h3 */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    background-color: #4CAF50; /* Color verde ecológico */
+    color: #fff; /* Color de texto blanco */
+  padding: 20px 10px; /* Espaciado interno */
+}
+
+footer {
+    text-align: center;
+}
+footer li{
+	list-style: none;
+	font:bold 14px verdana;
+	padding: 10px;
+	display: inline-block;
+}
+
+footer{
+	overflow: hidden;
+	 padding: 20px 10px;
+	 text-align: center;
+ 	clear:both;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+  overflow: hidden;
+  background-color: #5EBF13; /* Color de fondo */
+}
+
+/* Estilos para los enlaces dentro de la barra de navegación */
+.navbar a {
+  float: left;
+  display: block;
+  color: white; /* Color del texto */
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+}
+
+/* Estilos para el estado hover de los enlaces */
+.navbar a:hover {
+  background-color: #6DD41E; /* Color de fondo al pasar el cursor */
+  color: white; /* Cambio de color del texto */
+}
+section {
+	margin:20px;
+	width: 600px;
+	float:left;
+}
+
+/*Tablas */
+/* Estilo para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+/* Estilo para las celdas de la tabla */
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+/* Estilo para el encabezado de la tabla */
+th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estilo para las filas alternas de la tabla */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo para la fila al pasar el mouse */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para centrar el contenido en las celdas */
+td, th {
+    text-align: center;
+}
+
+/*Select*/
+
+/* Estilo básico para el combobox */
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23333" d="M2 0L0 2h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+    margin: 20px 0;
+}
+
+/* Estilo para el contenedor del combobox */
+.select-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px; /* Puedes ajustar el tamaño máximo del combobox */
+}
+
+/* Estilo para el icono desplegable */
+.select-container:after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333;
+    pointer-events: none;
+}
+
+/* Estilo para la apariencia del combobox en hover y focus */
+select:hover, select:focus {
+    border-color: #999;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para las opciones del combobox */
+select option {
+    padding: 10px;
+}
+
+/* input type="text" */
+/* Estilo básico para los inputs de texto */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    margin: 20px 0;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+/* Estilo para los inputs de texto en hover y focus */
+input[type="text"]:hover,
+input[type="text"]:focus {
+    border-color: #999;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    margin: 20px 0;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    margin: 20px 0;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+/* Estilo para inputs dentro de un contenedor */
+.input-container {
+    width: 100%;
+    max-width: 300px; /* Puedes ajustar el tamaño máximo del input */
+}
+
+/* Estilo para las etiquetas de los inputs */
+label {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* input type ="submit"*/
+/* Estilo básico para el botón de envío */
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    margin: 20px 0;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+/* Estilo para el botón de envío en hover y focus */
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    background-color: #45a049; /* Color de fondo en hover y focus */
+    border-color: #999;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+/* href a*/
+a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: #45a049;
+    color: #fff;
+}
+/* Estilo para los checkboxes */
+.checkbox-container {
+    margin-bottom: 20px;
+}
+
+input[type="checkbox"] {
+    appearance: none; /* Oculta el estilo predeterminado del checkbox */
+    -webkit-appearance: none; /* Para navegadores basados en WebKit como Chrome y Safari */
+    -moz-appearance: none; /* Para navegadores basados en Gecko como Firefox */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+ input[type="checkbox"]:checked {
+    background-color: #4CAF50; /* Color de fondo cuando está seleccionado */
+    border-color: #4CAF50; /* Color del borde cuando está seleccionado */
+}
+
+ input[type="checkbox"]:checked::before {
+    content: '\2714'; /* Unicode para el símbolo de marca de verificación */
+    font-size: 14px;
+    color: #fff; /* Color del símbolo cuando está seleccionado */
+    text-align: center;
+    line-height: 20px;
+    display: block;
+}
+/* Estilo para los elementos de lista */
+ul {
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px; /* Espacio entre elementos de lista */
+}
+
+/* Estilo para los enlaces dentro de los elementos de lista */
+li a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+li a:hover {
+    background-color: #45a049;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
+/* Estilo para el contenedor 2 */
+.container2 {
+    text-align: center; /* Alinea todo el contenido al centro */
+    width: 100%;
+}
+.container3 {
+    text-align: center; /* Alinea todo el contenido al centro */
+    width: 100%;
+}
+/* Estilo para los elementos dentro del contenedor 2 */
+.container2 h2,
+.container2 p,
+.container2 iframe {
+    margin: 20px auto; /* Alinea verticalmente al centro */
+    max-width: 100%; /* Ancho máximo igual al contenedor */
+}
+
+.left, .right {
+    flex: 1; /* Los dos elementos ocuparán igualmente el espacio disponible */
+}
+
+.left {
+    margin-right: 200px; /* Espacio entre el contenedor izquierdo y el derecho */
+}
+
+.left2 {
+	  margin-right: 10px;
+}
+.highlighted {
+    color: #000; /* Color del texto negro */
+    font-weight: bold; /* Texto en negrita */
+}
+
+button  {
+        background-color: #4CAF50; /* Color de fondo */
+        color: white; /* Color de texto */
+        padding: 10px 20px; /* Espaciado interno */
+        border: none; /* Sin borde */
+        border-radius: 4px; /* Bordes redondeados */
+        cursor: pointer; /* Cursor tipo puntero */
+        transition: background-color 0.3s; /* Transición suave del color de fondo */
+           display: block; /* Para centrar el botón */
+            margin: 0 auto; /* Para centrar el botón */
+    }
+
+    /* Cambiar color de fondo del botón al pasar el cursor sobre él */
+button :hover {
+    background-color: #45a049;
+}
