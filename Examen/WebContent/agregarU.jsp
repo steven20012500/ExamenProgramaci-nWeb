@@ -13,13 +13,10 @@
         <tr><td>Perfil</td><td><select name="cmbPerfil">
                     <option value="1">Administrador</option>
                     <option value="2">Cliente</option>
-                    <option value="3">Vendedor</option>
                 </select></td></tr>
         <tr><td>Estado Civil</td><td><select name="cmbECivil">
                     <option value="1">Soltero</option>
                     <option value="2">Casado</option>
-                    <option value="3">Divorciado</option>
-                    <option value="4">Viudo</option>
                 </select></td></tr>
  		<tr><td>Correo</td><td><input type="email" name="txtCorreo" placeholder="usuario@nombreProveedor.dominio" /></td></tr>
     </table>
