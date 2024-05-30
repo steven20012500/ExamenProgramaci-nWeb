@@ -12,6 +12,8 @@
         <tr><td>Clave</td><td> <input type="password" name="txtClave" required />*</td></tr>
     </table>
     <input type="submit" value="Enviar respuestas">
+        <button onclick="location.href='registro.jsp'">Registrar</button>
+    
 </form>
 </section>
 <%@ include file="piePag.jsp" %>
