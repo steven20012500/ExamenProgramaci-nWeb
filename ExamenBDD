@@ -1,0 +1,712 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 16.2
+-- Dumped by pg_dump version 16.2
+
+-- Started on 2024-05-30 10:48:32
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 215 (class 1259 OID 24758)
+-- Name: tb_categoria; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tb_categoria (
+    id_cat integer NOT NULL,
+    descripcion_cat text
+);
+
+
+ALTER TABLE public.tb_categoria OWNER TO postgres;
+
+--
+-- TOC entry 216 (class 1259 OID 24763)
+-- Name: tb_categoria_id_cat_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tb_categoria_id_cat_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.tb_categoria_id_cat_seq OWNER TO postgres;
+
+--
+-- TOC entry 4917 (class 0 OID 0)
+-- Dependencies: 216
+-- Name: tb_categoria_id_cat_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tb_categoria_id_cat_seq OWNED BY public.tb_categoria.id_cat;
+
+
+--
+-- TOC entry 217 (class 1259 OID 24764)
+-- Name: tb_estadocivil; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tb_estadocivil (
+    id_est integer NOT NULL,
+    descripcion_est text
+);
+
+
+ALTER TABLE public.tb_estadocivil OWNER TO postgres;
+
+--
+-- TOC entry 218 (class 1259 OID 24769)
+-- Name: tb_estadocivil_id_est_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tb_estadocivil_id_est_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.tb_estadocivil_id_est_seq OWNER TO postgres;
+
+--
+-- TOC entry 4918 (class 0 OID 0)
+-- Dependencies: 218
+-- Name: tb_estadocivil_id_est_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tb_estadocivil_id_est_seq OWNED BY public.tb_estadocivil.id_est;
+
+
+--
+-- TOC entry 219 (class 1259 OID 24770)
+-- Name: tb_pagina; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tb_pagina (
+    id_pag integer NOT NULL,
+    descripcion_pag text,
+    path_pag text
+);
+
+
+ALTER TABLE public.tb_pagina OWNER TO postgres;
+
+--
+-- TOC entry 220 (class 1259 OID 24775)
+-- Name: tb_pagina_id_pag_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tb_pagina_id_pag_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.tb_pagina_id_pag_seq OWNER TO postgres;
+
+--
+-- TOC entry 4919 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: tb_pagina_id_pag_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tb_pagina_id_pag_seq OWNED BY public.tb_pagina.id_pag;
+
+
+--
+-- TOC entry 221 (class 1259 OID 24776)
+-- Name: tb_perfil; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tb_perfil (
+    id_per integer NOT NULL,
+    descripcion_per text
+);
+
+
+ALTER TABLE public.tb_perfil OWNER TO postgres;
+
+--
+-- TOC entry 222 (class 1259 OID 24781)
+-- Name: tb_perfilPagina; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public."tb_perfilPagina" (
+    id_pagper integer NOT NULL,
+    id_pag integer,
+    id_per integer
+);
+
+
+ALTER TABLE public."tb_perfilPagina" OWNER TO postgres;
+
+--
+-- TOC entry 223 (class 1259 OID 24784)
+-- Name: tb_perfilPagina_id_pagper_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public."tb_perfilPagina_id_pagper_seq"
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public."tb_perfilPagina_id_pagper_seq" OWNER TO postgres;
+
+--
+-- TOC entry 4920 (class 0 OID 0)
+-- Dependencies: 223
+-- Name: tb_perfilPagina_id_pagper_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public."tb_perfilPagina_id_pagper_seq" OWNED BY public."tb_perfilPagina".id_pagper;
+
+
+--
+-- TOC entry 224 (class 1259 OID 24785)
+-- Name: tb_perfil_id_per_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tb_perfil_id_per_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.tb_perfil_id_per_seq OWNER TO postgres;
+
+--
+-- TOC entry 4921 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: tb_perfil_id_per_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tb_perfil_id_per_seq OWNED BY public.tb_perfil.id_per;
+
+
+--
+-- TOC entry 225 (class 1259 OID 24786)
+-- Name: tb_producto; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tb_producto (
+    id_pr integer NOT NULL,
+    id_cat integer,
+    nombre_pr text,
+    cantidad_pr integer,
+    precio_pr double precision,
+    foto_pr bytea
+);
+
+
+ALTER TABLE public.tb_producto OWNER TO postgres;
+
+--
+-- TOC entry 226 (class 1259 OID 24791)
+-- Name: tb_producto_id_pr_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tb_producto_id_pr_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.tb_producto_id_pr_seq OWNER TO postgres;
+
+--
+-- TOC entry 4922 (class 0 OID 0)
+-- Dependencies: 226
+-- Name: tb_producto_id_pr_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tb_producto_id_pr_seq OWNED BY public.tb_producto.id_pr;
+
+
+--
+-- TOC entry 230 (class 1259 OID 24845)
+-- Name: tb_servicio; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tb_servicio (
+    id_serv integer NOT NULL,
+    id_tipo integer,
+    nombre_serv text,
+    costo_serv double precision
+);
+
+
+ALTER TABLE public.tb_servicio OWNER TO postgres;
+
+--
+-- TOC entry 229 (class 1259 OID 24844)
+-- Name: tb_servicio_id_serv_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tb_servicio_id_serv_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.tb_servicio_id_serv_seq OWNER TO postgres;
+
+--
+-- TOC entry 4923 (class 0 OID 0)
+-- Dependencies: 229
+-- Name: tb_servicio_id_serv_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tb_servicio_id_serv_seq OWNED BY public.tb_servicio.id_serv;
+
+
+--
+-- TOC entry 227 (class 1259 OID 24792)
+-- Name: tb_usuario; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tb_usuario (
+    id_us integer NOT NULL,
+    id_per integer,
+    id_est integer,
+    nombre_us text,
+    cedula_us text,
+    correo_us text,
+    clave_us text
+);
+
+
+ALTER TABLE public.tb_usuario OWNER TO postgres;
+
+--
+-- TOC entry 228 (class 1259 OID 24797)
+-- Name: tb_usuario_id_us_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tb_usuario_id_us_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.tb_usuario_id_us_seq OWNER TO postgres;
+
+--
+-- TOC entry 4924 (class 0 OID 0)
+-- Dependencies: 228
+-- Name: tb_usuario_id_us_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tb_usuario_id_us_seq OWNED BY public.tb_usuario.id_us;
+
+
+--
+-- TOC entry 4723 (class 2604 OID 24798)
+-- Name: tb_categoria id_cat; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_categoria ALTER COLUMN id_cat SET DEFAULT nextval('public.tb_categoria_id_cat_seq'::regclass);
+
+
+--
+-- TOC entry 4724 (class 2604 OID 24799)
+-- Name: tb_estadocivil id_est; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_estadocivil ALTER COLUMN id_est SET DEFAULT nextval('public.tb_estadocivil_id_est_seq'::regclass);
+
+
+--
+-- TOC entry 4725 (class 2604 OID 24800)
+-- Name: tb_pagina id_pag; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_pagina ALTER COLUMN id_pag SET DEFAULT nextval('public.tb_pagina_id_pag_seq'::regclass);
+
+
+--
+-- TOC entry 4726 (class 2604 OID 24801)
+-- Name: tb_perfil id_per; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_perfil ALTER COLUMN id_per SET DEFAULT nextval('public.tb_perfil_id_per_seq'::regclass);
+
+
+--
+-- TOC entry 4727 (class 2604 OID 24802)
+-- Name: tb_perfilPagina id_pagper; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."tb_perfilPagina" ALTER COLUMN id_pagper SET DEFAULT nextval('public."tb_perfilPagina_id_pagper_seq"'::regclass);
+
+
+--
+-- TOC entry 4728 (class 2604 OID 24803)
+-- Name: tb_producto id_pr; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_producto ALTER COLUMN id_pr SET DEFAULT nextval('public.tb_producto_id_pr_seq'::regclass);
+
+
+--
+-- TOC entry 4730 (class 2604 OID 24848)
+-- Name: tb_servicio id_serv; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_servicio ALTER COLUMN id_serv SET DEFAULT nextval('public.tb_servicio_id_serv_seq'::regclass);
+
+
+--
+-- TOC entry 4729 (class 2604 OID 24804)
+-- Name: tb_usuario id_us; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_usuario ALTER COLUMN id_us SET DEFAULT nextval('public.tb_usuario_id_us_seq'::regclass);
+
+
+--
+-- TOC entry 4896 (class 0 OID 24758)
+-- Dependencies: 215
+-- Data for Name: tb_categoria; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tb_categoria (id_cat, descripcion_cat) VALUES (1, 'Limpieza');
+INSERT INTO public.tb_categoria (id_cat, descripcion_cat) VALUES (2, 'Alimentacion');
+INSERT INTO public.tb_categoria (id_cat, descripcion_cat) VALUES (3, 'Cuidado Personal');
+INSERT INTO public.tb_categoria (id_cat, descripcion_cat) VALUES (4, 'Energias Renovables');
+INSERT INTO public.tb_categoria (id_cat, descripcion_cat) VALUES (5, 'Transporte Sostenible');
+INSERT INTO public.tb_categoria (id_cat, descripcion_cat) VALUES (6, 'Educacion Ambiental');
+
+
+--
+-- TOC entry 4898 (class 0 OID 24764)
+-- Dependencies: 217
+-- Data for Name: tb_estadocivil; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tb_estadocivil (id_est, descripcion_est) VALUES (1, 'soltero');
+INSERT INTO public.tb_estadocivil (id_est, descripcion_est) VALUES (2, 'casado');
+
+
+--
+-- TOC entry 4900 (class 0 OID 24770)
+-- Dependencies: 219
+-- Data for Name: tb_pagina; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tb_pagina (id_pag, descripcion_pag, path_pag) VALUES (2, 'Consulta por categoría', 'http://localhost:8080/Examen/categorias.jsp');
+INSERT INTO public.tb_pagina (id_pag, descripcion_pag, path_pag) VALUES (4, 'Consultar productos', 'http://localhost:8080/Examen/productos.jsp');
+INSERT INTO public.tb_pagina (id_pag, descripcion_pag, path_pag) VALUES (5, 'Agregar Productos', 'http://localhost:8080/Examen/agregarP.jsp');
+INSERT INTO public.tb_pagina (id_pag, descripcion_pag, path_pag) VALUES (6, 'Agregar usuario', 'http://localhost:8080/Examen/agregarU.jsp');
+INSERT INTO public.tb_pagina (id_pag, descripcion_pag, path_pag) VALUES (7, 'Agregar Servicio', 'http://localhost:8080/Examen/agregarServicio.jsp');
+INSERT INTO public.tb_pagina (id_pag, descripcion_pag, path_pag) VALUES (8, 'Consultar Servicios', 'http://localhost:8080/Examen/servicios.jsp');
+INSERT INTO public.tb_pagina (id_pag, descripcion_pag, path_pag) VALUES (1, 'Modificar o eliminar productos y servicios', 'http://localhost:8080/Examen/modificarProdServ.jsp');
+INSERT INTO public.tb_pagina (id_pag, descripcion_pag, path_pag) VALUES (3, 'Carrito de compra', 'http://localhost:8080/Examen/carrito.jsp');
+
+
+--
+-- TOC entry 4902 (class 0 OID 24776)
+-- Dependencies: 221
+-- Data for Name: tb_perfil; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tb_perfil (id_per, descripcion_per) VALUES (1, 'administrador');
+INSERT INTO public.tb_perfil (id_per, descripcion_per) VALUES (2, 'cliente');
+INSERT INTO public.tb_perfil (id_per, descripcion_per) VALUES (3, 'vendedor');
+
+
+--
+-- TOC entry 4903 (class 0 OID 24781)
+-- Dependencies: 222
+-- Data for Name: tb_perfilPagina; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public."tb_perfilPagina" (id_pagper, id_pag, id_per) VALUES (2, 2, 2);
+INSERT INTO public."tb_perfilPagina" (id_pagper, id_pag, id_per) VALUES (3, 3, 2);
+INSERT INTO public."tb_perfilPagina" (id_pagper, id_pag, id_per) VALUES (5, 5, 1);
+INSERT INTO public."tb_perfilPagina" (id_pagper, id_pag, id_per) VALUES (1, 1, 1);
+INSERT INTO public."tb_perfilPagina" (id_pagper, id_pag, id_per) VALUES (4, 4, 2);
+INSERT INTO public."tb_perfilPagina" (id_pagper, id_pag, id_per) VALUES (6, 6, 1);
+INSERT INTO public."tb_perfilPagina" (id_pagper, id_pag, id_per) VALUES (7, 7, 1);
+INSERT INTO public."tb_perfilPagina" (id_pagper, id_pag, id_per) VALUES (8, 8, 2);
+
+
+--
+-- TOC entry 4906 (class 0 OID 24786)
+-- Dependencies: 225
+-- Data for Name: tb_producto; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tb_producto (id_pr, id_cat, nombre_pr, cantidad_pr, precio_pr, foto_pr) VALUES (2, 1, 'Detergente Ecologico 750ml', 30, 5.99, NULL);
+INSERT INTO public.tb_producto (id_pr, id_cat, nombre_pr, cantidad_pr, precio_pr, foto_pr) VALUES (3, 3, 'Champú Natural de Aloe Vera 500ml', 20, 7.99, NULL);
+INSERT INTO public.tb_producto (id_pr, id_cat, nombre_pr, cantidad_pr, precio_pr, foto_pr) VALUES (1, 2, 'Arroz Integral Org�nico 1kg', 39, 3.49, NULL);
+
+
+--
+-- TOC entry 4911 (class 0 OID 24845)
+-- Dependencies: 230
+-- Data for Name: tb_servicio; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tb_servicio (id_serv, id_tipo, nombre_serv, costo_serv) VALUES (3, 6, 'Taller de Recilaje', 50);
+INSERT INTO public.tb_servicio (id_serv, id_tipo, nombre_serv, costo_serv) VALUES (4, 5, 'Alquiler de Bicicletas Eléctricas', 20);
+INSERT INTO public.tb_servicio (id_serv, id_tipo, nombre_serv, costo_serv) VALUES (5, 4, 'Instalacion de Paneles Solares', 1000);
+
+
+--
+-- TOC entry 4908 (class 0 OID 24792)
+-- Dependencies: 227
+-- Data for Name: tb_usuario; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.tb_usuario (id_us, id_per, id_est, nombre_us, cedula_us, correo_us, clave_us) VALUES (5, 2, 2, 'Martinez Ferrer', '1199841', 'usuario2', '123');
+INSERT INTO public.tb_usuario (id_us, id_per, id_est, nombre_us, cedula_us, correo_us, clave_us) VALUES (1, 3, 1, 'Steven Suntaxi', '1727735365', 'steven', '1234');
+INSERT INTO public.tb_usuario (id_us, id_per, id_est, nombre_us, cedula_us, correo_us, clave_us) VALUES (2, 1, 1, 'admin', '121313', 'admin', '123');
+INSERT INTO public.tb_usuario (id_us, id_per, id_est, nombre_us, cedula_us, correo_us, clave_us) VALUES (8, 2, 1, 'Steven', '234234324', 'saa@outolook.es', '654321');
+INSERT INTO public.tb_usuario (id_us, id_per, id_est, nombre_us, cedula_us, correo_us, clave_us) VALUES (9, 2, 1, 'Peter pan', '21321323', 'peter@123', '654321');
+INSERT INTO public.tb_usuario (id_us, id_per, id_est, nombre_us, cedula_us, correo_us, clave_us) VALUES (10, 1, 1, 'Steven Suntaxi', '1727735365', 'steven20012500@gmail.com', '654321');
+
+
+--
+-- TOC entry 4925 (class 0 OID 0)
+-- Dependencies: 216
+-- Name: tb_categoria_id_cat_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tb_categoria_id_cat_seq', 2, true);
+
+
+--
+-- TOC entry 4926 (class 0 OID 0)
+-- Dependencies: 218
+-- Name: tb_estadocivil_id_est_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tb_estadocivil_id_est_seq', 1, false);
+
+
+--
+-- TOC entry 4927 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: tb_pagina_id_pag_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tb_pagina_id_pag_seq', 3, true);
+
+
+--
+-- TOC entry 4928 (class 0 OID 0)
+-- Dependencies: 223
+-- Name: tb_perfilPagina_id_pagper_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public."tb_perfilPagina_id_pagper_seq"', 1, true);
+
+
+--
+-- TOC entry 4929 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: tb_perfil_id_per_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tb_perfil_id_per_seq', 1, false);
+
+
+--
+-- TOC entry 4930 (class 0 OID 0)
+-- Dependencies: 226
+-- Name: tb_producto_id_pr_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tb_producto_id_pr_seq', 3, true);
+
+
+--
+-- TOC entry 4931 (class 0 OID 0)
+-- Dependencies: 229
+-- Name: tb_servicio_id_serv_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tb_servicio_id_serv_seq', 5, true);
+
+
+--
+-- TOC entry 4932 (class 0 OID 0)
+-- Dependencies: 228
+-- Name: tb_usuario_id_us_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tb_usuario_id_us_seq', 10, true);
+
+
+--
+-- TOC entry 4732 (class 2606 OID 24806)
+-- Name: tb_categoria id_cat; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_categoria
+    ADD CONSTRAINT id_cat PRIMARY KEY (id_cat);
+
+
+--
+-- TOC entry 4734 (class 2606 OID 24808)
+-- Name: tb_estadocivil id_est; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_estadocivil
+    ADD CONSTRAINT id_est PRIMARY KEY (id_est);
+
+
+--
+-- TOC entry 4736 (class 2606 OID 24810)
+-- Name: tb_pagina id_pag; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_pagina
+    ADD CONSTRAINT id_pag PRIMARY KEY (id_pag);
+
+
+--
+-- TOC entry 4740 (class 2606 OID 24812)
+-- Name: tb_perfilPagina id_pagper; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."tb_perfilPagina"
+    ADD CONSTRAINT id_pagper PRIMARY KEY (id_pagper);
+
+
+--
+-- TOC entry 4738 (class 2606 OID 24814)
+-- Name: tb_perfil id_per; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_perfil
+    ADD CONSTRAINT id_per PRIMARY KEY (id_per);
+
+
+--
+-- TOC entry 4742 (class 2606 OID 24816)
+-- Name: tb_producto id_pr; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_producto
+    ADD CONSTRAINT id_pr PRIMARY KEY (id_pr);
+
+
+--
+-- TOC entry 4746 (class 2606 OID 24852)
+-- Name: tb_servicio id_serv; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_servicio
+    ADD CONSTRAINT id_serv PRIMARY KEY (id_serv);
+
+
+--
+-- TOC entry 4744 (class 2606 OID 24818)
+-- Name: tb_usuario id_us; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_usuario
+    ADD CONSTRAINT id_us PRIMARY KEY (id_us);
+
+
+--
+-- TOC entry 4749 (class 2606 OID 24819)
+-- Name: tb_producto id_cat; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_producto
+    ADD CONSTRAINT id_cat FOREIGN KEY (id_cat) REFERENCES public.tb_categoria(id_cat);
+
+
+--
+-- TOC entry 4750 (class 2606 OID 24824)
+-- Name: tb_usuario id_est; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_usuario
+    ADD CONSTRAINT id_est FOREIGN KEY (id_est) REFERENCES public.tb_estadocivil(id_est);
+
+
+--
+-- TOC entry 4747 (class 2606 OID 24829)
+-- Name: tb_perfilPagina id_pag; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."tb_perfilPagina"
+    ADD CONSTRAINT id_pag FOREIGN KEY (id_pag) REFERENCES public.tb_pagina(id_pag);
+
+
+--
+-- TOC entry 4751 (class 2606 OID 24834)
+-- Name: tb_usuario id_per; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_usuario
+    ADD CONSTRAINT id_per FOREIGN KEY (id_per) REFERENCES public.tb_perfil(id_per);
+
+
+--
+-- TOC entry 4748 (class 2606 OID 24839)
+-- Name: tb_perfilPagina id_per; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public."tb_perfilPagina"
+    ADD CONSTRAINT id_per FOREIGN KEY (id_per) REFERENCES public.tb_perfil(id_per);
+
+
+--
+-- TOC entry 4752 (class 2606 OID 24853)
+-- Name: tb_servicio id_tipo; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tb_servicio
+    ADD CONSTRAINT id_tipo FOREIGN KEY (id_tipo) REFERENCES public.tb_categoria(id_cat);
+
+
+-- Completed on 2024-05-30 10:48:34
+
+--
+-- PostgreSQL database dump complete
+--
+
