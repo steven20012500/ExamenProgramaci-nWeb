@@ -97,7 +97,7 @@ th {
     font-weight: bold;
 }
 
-/* Estilo para las filas alternas de la tabla */
+/* Estilo para las filas alternas de la tabl */
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
